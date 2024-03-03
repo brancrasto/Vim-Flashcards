@@ -1,0 +1,14 @@
+{
+  "name": "vim-practice",
+  "version": "1.0.0",
+  "description": "practicing while i practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "redline": "^1.0.1"
+  }
+}

@@ -1,0 +1,22 @@
+[
+    { "command": ":w", "description": "Save the current buffer" },
+    { "command": ":i", "description": "Insert to the left" },
+    { "command": ":q!", "description": "Quit without saving" },
+    { "command": "dd", "description": "Delete (cut) a line" },
+    { "command": "yy", "description": "Yank (copy) a line" },
+    { "command": "p", "description": "Put (paste) the clipboard after cursor" },
+    { "command": "gg", "description": "Go to the first line of the document" },
+    { "command": "G", "description": "Go to the last line of the document" },
+    { "command": ":wq", "description": "Write (save) and quit" },
+    { "command": "u", "description": "Undo the last operation" },
+    { "command": "ctrl+r", "description": "Redo the last undone operation" },
+    { "command": "/text", "description": "Search for text in the document" },
+    { "command": ":noh", "description": "Remove highlighting of search matches" },
+    { "command": ":%s/old/new/g", "description": "Replace all occurrences of 'old' with 'new'" },
+    { "command": ":split", "description": "Split the window horizontally" },
+    { "command": ":vsplit", "description": "Split the window vertically" },
+    { "command": "ctrl+w w", "description": "Switch between split windows" },
+    { "command": ":e filename", "description": "Open a file in a new buffer" },
+    { "command": ":bnext", "description": "Go to the next buffer" },
+    { "command": ":bprev", "description": "Go to the previous buffer" }
+]
