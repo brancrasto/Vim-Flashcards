@@ -1,6 +1,5 @@
 [
     { "command": ":w", "description": "Save the current buffer" },
-    { "command": ":i", "description": "Insert to the left" },
     { "command": ":q!", "description": "Quit without saving" },
     { "command": "dd", "description": "Delete (cut) a line" },
     { "command": "yy", "description": "Yank (copy) a line" },

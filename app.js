@@ -43,7 +43,7 @@ function askQuestion(index, flashcards) {
         if (score == flashcards.length) {
             console.log(`You got them all correct!\n`);
         } else {
-            console.log(`You scored '${score}' out of '${flashcards.length}'\n`);
+            console.log(`You scored ${score} out of ${flashcards.length}\n`);
         }
 
         console.log(`Time Taken = ${minutes}:${seconds}`);
