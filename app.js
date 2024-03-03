@@ -7,7 +7,10 @@ fs.readFile('flashcards.json', 'utf8', (err, data) => {
         return;
     }
 
-    const flashcards = JSON.parse(data);
+    let flashcards = JSON.parse(data);
+    flashcards = flashcards.sort(function () {
+        return 0.5 - Math.random();
+    })
 
     askQuestion(0, flashcards)
 })
@@ -21,14 +24,12 @@ let score = 0;
 
 function askQuestion(index, flashcards) {
     if (index < flashcards.length) {
-
         rl.question(`What is the command '${flashcards[index].description}'?\n`, (answer) => {
             if (answer === flashcards[index].command) {
                 console.log('Correct\n');
                 score += 1;
             } else {
                 console.log(`The answer is '${flashcards[index].command}'\n`);
-                rl.close;
             }
             askQuestion(index + 1, flashcards);
         })
@@ -39,6 +40,7 @@ function askQuestion(index, flashcards) {
             console.log(`You scored '${score}' out of '${flashcards.length}'\n`);
         }
 
-        rl.close;
+        rl.close();
     }
 }
+
