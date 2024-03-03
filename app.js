@@ -21,25 +21,32 @@ const rl = readline.createInterface({
 })
 
 let score = 0;
+let startTime = Date.now();
 
 function askQuestion(index, flashcards) {
     if (index < flashcards.length) {
         rl.question(`What is the command '${flashcards[index].description}'?\n`, (answer) => {
             if (answer === flashcards[index].command) {
                 console.log('Correct\n');
-                score += 1;
+                score++;
             } else {
                 console.log(`The answer is '${flashcards[index].command}'\n`);
             }
             askQuestion(index + 1, flashcards);
         })
     } else {
+        let endtime = Date.now();
+        let totalTime = endtime - startTime;
+        let minutes = Math.floor(totalTime / 60000);
+        let seconds = ((totalTime % 60000) / 1000).toFixed(0)
+
         if (score == flashcards.length) {
             console.log(`You got them all correct!\n`);
         } else {
             console.log(`You scored '${score}' out of '${flashcards.length}'\n`);
         }
 
+        console.log(`Time Taken = ${minutes}:${seconds}`);
         rl.close();
     }
 }
