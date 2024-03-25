@@ -1,22 +1,22 @@
 body {
-  background-color: #222831;
+	background-color: #222831;
 }
 
 .vim-test {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
+	position: relative;
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 .description {
-  color: white;
+	color: white;
 }
 
 .cm-editor {
-  height: 16em;
+	height: 16em;
 }
 
 .submit-btn {
-  margin-top: 2em;
-  padding: 1em 2em;
+	margin-top: 2em;
+	padding: 1em 2em;
 }
