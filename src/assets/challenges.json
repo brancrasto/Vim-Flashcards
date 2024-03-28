@@ -1,10 +1,4 @@
-import { EditorState } from "@codemirror/state";
-import { EditorView } from "@codemirror/view";
-import { basicSetup } from "codemirror";
-import { oneDark } from "@codemirror/theme-one-dark";
-import { vim } from "@replit/codemirror-vim"
-
-const vimChallenges = [
+[
     {
         "id": 1,
         "buggyCode": "<html>\n<head>\n<title>My Website</tile>\n</head>\n<body>\n<h1>Welcome to my website</h1>\n</body>\n</html>",
@@ -35,45 +29,4 @@ const vimChallenges = [
         "description": "Correct the method name to access an element by ID.",
         "fixedCode": "document.getElementById('myElement').innerText = 'Hello World';"
     }
-];
-
-const state = EditorState.create({
-  extensions: [basicSetup, oneDark, vim()],
-});
-
-const editor = new EditorView({
-  state,
-  parent: document.getElementById('editor')
-});
-
-function loadChallenge(challenge) {
-  document.querySelector(".description").innerHTML = challenge.description;
-  editor.setState(EditorState.create({
-    doc:challenge.buggyCode,
-    extensions: [basicSetup, oneDark, vim()],
-  }));
-}
-
-function checkSolution(challenge) {
-  const userCode = editor.state.doc.toString();
-
-  if (userCode === challenge.fixedCode) {
-    document.querySelector(".description").innerHTML = "Correct";
-
-    if (count < vimChallenges.length - 1) {
-      count++;
-      loadChallenge(vimChallenges[count]);
-    } else {
-      document.querySelector(".description").innerHTML = "All challenges completed!";
-    }
-  } else {
-    document.querySelector(".description").innerHTML = "Try again";
-  }
-}
-
-let count = 0
-loadChallenge(vimChallenges[count]);
-
-document.getElementById('checkBtn').addEventListener('click', () => {
-  checkSolution(vimChallenges[count]);
-});
+]
